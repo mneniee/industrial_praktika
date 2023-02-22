@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "figure.h"
+
 #include <vector>
 using namespace std;
 class Figure {
