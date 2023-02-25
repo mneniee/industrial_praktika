@@ -2,41 +2,31 @@
 #include "Circle.h"
 using namespace std;
 
-int main() {
+
+int main(void) {
+
     Circle mas[3];
-    float radius, x, y, x_cntr, y_cntr, r;
-    float a, b, c;
-    for(int i = 0; i < 3; i ++) {
-        cout << "Введите радиус и координаты окружности " << i + 1  << "через пробел : ";
+    float r, x, y;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Введите радиус, x , y для окружности № " << i + 1 << " : " << endl;
         cin >> r >> x >> y;
-        mas[i].set_circle (r, x, y);
+        mas[i].set_circle(r, x, y);
     }
-
-    for(int i = 0; i < 3; i ++) {
-        cout << "Введите стороны треугольника " << i + 1 <<"через пробел :  ";
+    float a, b, c;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Площадь окружности № " << i + 1 << endl;
+        cout << mas[i].square();
+        cout << "Введите a, b , c для треугольника чтобы быть описаным окр № " << i + 1 << " через пробел: " << endl;
         cin >> a >> b >> c;
-        mas[i].set (a, b, c);
-        if(!mas[i].treug()){
-            cout << "Такого треугольника не существует " << endl;
-            i --;
-
-        }
-        cout << "Можно ли вписать треугольник  " << i + 1 <<"Значение: "<<  mas[i].triangle_around(a, b, c) << endl;
-        cout << "Можно ли описать треугольник  " << i + 1 << "Значение: " <<  mas[i].triangle_in(a, b, c) << endl;
-        cout << "Площадь окружности: " << mas[i].square() << endl;
-    
-
+        cout << mas[i].triangle_in(a, b, c);
+        cout << "Введите a, b , c для треугольника в который нужно вписать окр № " << i + 1 << " через пробел: " << endl;
+        cin >> a >> b >> c;
+        cout << mas[i].triangle_around(a, b, c);
+        cout << "Введите радиус и координаты центра для окружности, для проверки касания";
+        cout << mas[i].check_circle(a, b, c);
     }
-    
-        
-   
-    cout << "Введите радиус и координаты окружности для пересечения через пробел : ";
-    cin >> r >> x_cntr >> y_cntr;
-  
-    for(int i = 0; i < 3; i ++) {
-        cout << "Окружность песесекает окружность " << i + 1 << "значение: " << mas[i].check_circle(r, x_cntr, y_cntr) << endl;
-    }
-  
-
     return 0;
+    
 }
