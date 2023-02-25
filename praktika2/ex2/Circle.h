@@ -1,7 +1,7 @@
 class Circle {
     private: 
         float radius, x_center, y_center;
-        float a, b, c;
+        
   
     public:
         Circle();
@@ -9,9 +9,7 @@ class Circle {
         Circle(float r, float x, float y);
 
         void set_circle(float r, float x, float y);
-        
-        void set(float a1, float b1, float c1);
-
+       
         float square();
 
         bool triangle_around (float a, float b, float c);
@@ -19,7 +17,6 @@ class Circle {
         bool triangle_in (float a, float b, float c);
 
         bool check_circle(float r, float x_cntr, float y_cntr);
-        
-        bool treug();
+       
 
 };
