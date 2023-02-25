@@ -3,20 +3,25 @@
 using namespace std;
 
 Figure::Figure(float x1,float x2,float x3,float x4,float y1,float y2,float y3,float y4){
+  this->x1 = x1; this->x2 = x2;this->x3 = x3; this->x4 = x4;this->y1 = y1;this->y2 = y2;this->y3 = y3; this->y4 = y4;
   a = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
   b = sqrt(pow(x3 - x2, 2) + pow(y3 - y2, 2));
   c = sqrt(pow(x4 - x3, 2) + pow(y4 - y3, 2));
   d = sqrt(pow(x1 - x4, 2) + pow(y1 - y4, 2));
-
-}
-
-void Figure::show(){
-  p = a + b + c + d;
   zn1 = sqrt(pow(x3 - x1, 2) + pow(y3 - y1, 2));
   zn2 = sqrt(pow(x4 - x2, 2) + pow(y4 - y2, 2));
   zn3 = ((x3 - x1)*(x4 - x2) + (y3 - y1)*(y4 - y2))/(sqrt(pow(x3 - x1, 2) + pow(y3 - y1, 2))*(pow(x4 - x2, 2) + pow(y4 - y2, 2)));
   zn4 = sqrt(1 - zn3*zn3);
-  s = 0.5 * zn1 * zn2 * zn4;
+  this->p = a + b + c + d;
+  this->s = 0.5 * zn1 * zn2 * zn4;
+
+}
+
+void Figure::show(){
+  
+  
+  cout << "Периметр: " << p << endl;
+  cout << "Площадь: " << s << endl;
 
 }
 bool Figure::is_prug(){
@@ -69,6 +74,4 @@ bool Figure::is_in_circle() {
     return false;
   }
 }
-
-
 
