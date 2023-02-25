@@ -1,5 +1,6 @@
 #include"figure.h"
 #include<cmath>
+#include<iostream>
 using namespace std;
 
 Figure::Figure(float x1,float x2,float x3,float x4,float y1,float y2,float y3,float y4){
